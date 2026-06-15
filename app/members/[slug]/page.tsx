@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { members } from "@/data/members";
 
@@ -15,10 +16,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const member = members.find((m) => m.slug === slug);
   if (!member) return {};
-  return {
-    title: member.name,
-    description: member.bio,
-  };
+  return { title: member.name, description: member.bio };
 }
 
 export default async function MemberDetailPage({ params }: Props) {
@@ -27,61 +25,67 @@ export default async function MemberDetailPage({ params }: Props) {
   if (!member) notFound();
 
   return (
-    <div className="max-w-4xl mx-auto px-4 sm:px-6 py-12">
+    <div className="max-w-5xl mx-auto px-4 sm:px-6 py-16">
       <Link
         href="/members"
-        className="inline-flex items-center gap-2 text-neutral-500 hover:text-neutral-200 text-sm mb-10 transition-colors"
+        className="inline-flex items-center gap-2 text-neutral-600 hover:text-yellow-400 text-xs tracking-[0.2em] uppercase font-medium mb-12 transition-colors"
       >
         <span>&#8592;</span> All Members
       </Link>
 
-      <div className="grid md:grid-cols-3 gap-8 mb-10">
-        {/* Avatar + basic info */}
-        <div className="md:col-span-1">
-          <div className="bg-neutral-900 border border-neutral-800 p-6 mb-4">
-            <div className="w-20 h-20 bg-neutral-800 rounded-full mb-5 flex items-center justify-center text-neutral-400 text-2xl font-black">
-              {member.name.split(" ").map((n) => n[0]).join("")}
-            </div>
-            <h1 className="font-black text-white text-2xl leading-tight mb-1">{member.name}</h1>
-            <div className="text-red-600 text-sm font-medium mb-4">{member.role.split(",")[0]}</div>
+      <div className="grid md:grid-cols-5 gap-8 mb-14">
+        {/* Photo */}
+        <div className="md:col-span-2">
+          <div className="relative aspect-[3/4] overflow-hidden bg-neutral-900 border border-neutral-900">
+            <Image
+              src={member.image}
+              alt={member.name}
+              fill
+              className="object-cover object-top"
+              sizes="(max-width: 768px) 100vw, 40vw"
+              priority
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+          </div>
 
-            <div className="space-y-3 text-xs">
-              <div>
-                <div className="text-neutral-600 uppercase tracking-widest mb-0.5">Status</div>
-                <div className={member.status === "current" ? "text-green-400" : "text-neutral-400"}>
-                  {member.status === "current" ? "Current Member" : "Former Member"}
-                </div>
+          {/* Info card */}
+          <div className="bg-neutral-950 border border-neutral-900 mt-3 p-5 space-y-4 text-xs">
+            {[
+              { label: "Status", value: member.status === "current" ? "Current Member" : "Former Member", highlight: member.status === "current" },
+              { label: "Active", value: member.yearsActive },
+              { label: "Born", value: member.born },
+              { label: "From", value: member.birthplace },
+            ].map((row) => (
+              <div key={row.label}>
+                <div className="text-neutral-700 uppercase tracking-[0.3em] text-[10px] mb-0.5">{row.label}</div>
+                <div className={row.highlight ? "text-yellow-400 font-medium" : "text-neutral-300"}>{row.value}</div>
               </div>
-              <div>
-                <div className="text-neutral-600 uppercase tracking-widest mb-0.5">Active</div>
-                <div className="text-neutral-300">{member.yearsActive}</div>
-              </div>
-              <div>
-                <div className="text-neutral-600 uppercase tracking-widest mb-0.5">Born</div>
-                <div className="text-neutral-300">{member.born}</div>
-              </div>
-              <div>
-                <div className="text-neutral-600 uppercase tracking-widest mb-0.5">From</div>
-                <div className="text-neutral-300">{member.birthplace}</div>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
 
-        {/* Bio + facts */}
-        <div className="md:col-span-2 space-y-6">
-          <div>
-            <h2 className="text-xs font-semibold tracking-[0.25em] text-neutral-500 uppercase mb-4">Biography</h2>
-            <p className="text-neutral-300 leading-relaxed text-sm">{member.longBio}</p>
+        {/* Bio */}
+        <div className="md:col-span-3">
+          <div className="flex items-center gap-3 mb-2">
+            <div className="h-px w-6 bg-yellow-500" />
+            <span className="text-yellow-500 text-[10px] font-bold tracking-[0.35em] uppercase">{member.role.split(",")[0]}</span>
+          </div>
+          <h1 className="font-black text-white text-4xl md:text-5xl uppercase tracking-tight leading-none mb-8">
+            {member.name}
+          </h1>
+
+          <div className="mb-10">
+            <div className="text-[10px] font-bold tracking-[0.35em] text-neutral-600 uppercase mb-4">Biography</div>
+            <p className="text-neutral-400 leading-relaxed text-sm">{member.longBio}</p>
           </div>
 
           <div>
-            <h2 className="text-xs font-semibold tracking-[0.25em] text-neutral-500 uppercase mb-4">Notable Facts</h2>
+            <div className="text-[10px] font-bold tracking-[0.35em] text-neutral-600 uppercase mb-4">Notable Facts</div>
             <ul className="space-y-3">
               {member.notableFacts.map((fact, i) => (
                 <li key={i} className="flex items-start gap-3">
-                  <span className="text-red-700 mt-1 shrink-0 text-xs">—</span>
-                  <span className="text-neutral-400 text-sm leading-relaxed">{fact}</span>
+                  <span className="text-yellow-500/60 mt-0.5 shrink-0 text-xs font-bold">0{i + 1}</span>
+                  <span className="text-neutral-500 text-sm leading-relaxed">{fact}</span>
                 </li>
               ))}
             </ul>
@@ -90,8 +94,8 @@ export default async function MemberDetailPage({ params }: Props) {
       </div>
 
       {/* Other members */}
-      <div className="border-t border-neutral-800 pt-8">
-        <h3 className="text-xs font-semibold tracking-[0.25em] text-neutral-600 uppercase mb-4">Other Members</h3>
+      <div className="border-t border-neutral-900 pt-10">
+        <div className="text-[10px] font-bold tracking-[0.4em] text-neutral-700 uppercase mb-6">Other Members</div>
         <div className="flex flex-wrap gap-2">
           {members
             .filter((m) => m.slug !== slug)
@@ -99,7 +103,7 @@ export default async function MemberDetailPage({ params }: Props) {
               <Link
                 key={m.slug}
                 href={`/members/${m.slug}`}
-                className="border border-neutral-800 hover:border-neutral-600 text-neutral-400 hover:text-white text-xs px-3 py-1.5 transition-colors"
+                className="border border-neutral-800 hover:border-yellow-500/50 text-neutral-600 hover:text-yellow-400 text-xs px-4 py-2 tracking-[0.15em] uppercase font-medium transition-all duration-150"
               >
                 {m.name}
               </Link>

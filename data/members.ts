@@ -9,6 +9,7 @@ export interface Member {
   notableFacts: string[];
   born: string;
   birthplace: string;
+  image: string;
 }
 
 export const members: Member[] = [
@@ -20,6 +21,7 @@ export const members: Member[] = [
     status: "current",
     born: "August 3, 1963",
     birthplace: "Downey, California, USA",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/James_Hetfield_-_Metallica_2_crop.jpg/800px-James_Hetfield_-_Metallica_2_crop.jpg",
     bio: "Co-founder, vocalist, and rhythm guitarist. The riff architect behind Metallica's sound and one of heavy metal's most iconic frontmen.",
     longBio:
       "James Hetfield co-founded Metallica in 1981 after responding to a drum-player-wanted ad placed by Lars Ulrich. His down-picked rhythm guitar style — precise, thunderous, and uniquely percussive — became one of the defining elements of thrash metal. As the band's primary lyricist, Hetfield has explored themes ranging from war and addiction to personal trauma and self-examination across more than four decades of work. His baritone vocals evolved from aggressive thrash delivery to a more nuanced, emotionally expressive instrument on later records. In 2001, Hetfield entered rehabilitation for alcohol dependency, an experience documented in the film Some Kind of Monster. He has since spoken openly about recovery and mental health.",
@@ -39,6 +41,7 @@ export const members: Member[] = [
     status: "current",
     born: "December 26, 1963",
     birthplace: "Gentofte, Denmark",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Lars_Ulrich_by_Ron_Elkman.jpg/800px-Lars_Ulrich_by_Ron_Elkman.jpg",
     bio: "Co-founder and drummer. The driving business and creative force who helped turn Metallica into a global phenomenon.",
     longBio:
       "Lars Ulrich is the Danish-born drummer who placed the classified ad that brought James Hetfield into his life, forming the nucleus of Metallica. A self-taught drummer influenced by the New Wave of British Heavy Metal, Ulrich's aggressive, polyrhythmic playing style became inseparable from the Metallica sound. Beyond the kit, he has been a relentless advocate for the band's interests — most famously leading Metallica's high-profile legal battle against Napster in 2000. Ulrich is widely credited with shaping Metallica's business strategy, from early independent distribution to the founding of their own Blackened Recordings label.",
@@ -58,6 +61,7 @@ export const members: Member[] = [
     status: "current",
     born: "November 18, 1962",
     birthplace: "San Francisco, California, USA",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Kirk_Hammett_2009.jpg/800px-Kirk_Hammett_2009.jpg",
     bio: "Lead guitarist since 1983, known for melodic, wah-infused solos and signature riffs across Metallica's greatest albums.",
     longBio:
       "Kirk Hammett replaced Dave Mustaine in April 1983 just before the recording of Kill 'Em All. Already a skilled guitarist as a member of Exodus, Hammett sought further instruction and studied under legendary guitar teacher Joe Satriani. His style blends aggressive thrash picking with melodic, blues-influenced lead work, and his heavy use of wah-wah pedal has become one of metal's most recognizable sounds. Hammett has crafted some of the most celebrated guitar solos in rock history, from the haunting One to the ferocious Battery. He is also a lifelong collector of horror memorabilia and vintage guitars.",
@@ -77,6 +81,7 @@ export const members: Member[] = [
     status: "current",
     born: "October 23, 1964",
     birthplace: "Santa Monica, California, USA",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Robert_Trujillo_2010.jpg/800px-Robert_Trujillo_2010.jpg",
     bio: "Bassist since 2003, bringing funk-influenced technique and massive low-end power to Metallica's live and studio sound.",
     longBio:
       "Robert Trujillo joined Metallica in February 2003 following stints with Suicidal Tendencies and Ozzy Osbourne. Famously, he was reportedly offered a $1 million signing bonus upon joining. His playing background spans funk, jazz, and metal, bringing a rhythmic complexity and stage presence that reinvigorated the band's live performances. Trujillo is known for his distinctive walking-while-playing stance and his ability to replicate both the technical demands of classic Metallica material and the groove-oriented work of later records. He produced the 2016 documentary Jaco, about jazz bassist Jaco Pastorius.",
@@ -96,6 +101,7 @@ export const members: Member[] = [
     status: "former",
     born: "February 10, 1962",
     birthplace: "Castro Valley, California, USA",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Cliff_Burton_1983.jpg/800px-Cliff_Burton_1983.jpg",
     bio: "Original bassist and musical visionary. His technical brilliance and melodic bass lines shaped Metallica's early sound.",
     longBio:
       "Cliff Burton was the original bassist of Metallica from 1982 until his tragic death in September 1986. His passing in a tour bus accident in Sweden at age 24 cut short one of the most promising careers in metal history. Burton brought a classical music sensibility to heavy metal bass playing, treating his instrument as a lead voice rather than purely a rhythmic support. His iconic bass solo Anesthesia (Pulling Teeth) from Kill 'Em All showcased his virtuosity, while his melodic contributions shaped Master of Puppets into a masterwork. He is universally regarded as one of the greatest rock bassists of all time.",
@@ -115,6 +121,7 @@ export const members: Member[] = [
     status: "former",
     born: "March 4, 1963",
     birthplace: "Battle Creek, Michigan, USA",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Jason_Newsted_2013.jpg/800px-Jason_Newsted_2013.jpg",
     bio: "Bassist from 1986 to 2001, whose tenure covered four studio albums and some of the band's most successful touring years.",
     longBio:
       "Jason Newsted joined Metallica in November 1986 following Cliff Burton's death, having been selected after an extensive audition process. His first major studio appearance on ...And Justice for All was notoriously marred by a mix that rendered his bass nearly inaudible — a source of ongoing frustration throughout his tenure. Newsted contributed significantly to the band's live performances and was a central figure in Metallica's global expansion through the 1990s. He departed in January 2001 citing a desire to pursue personal musical projects and exhaustion from years of touring. He has since reconciled with his former bandmates.",
@@ -134,6 +141,7 @@ export const members: Member[] = [
     status: "former",
     born: "September 13, 1961",
     birthplace: "La Mesa, California, USA",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Dave_Mustaine_2013.jpg/800px-Dave_Mustaine_2013.jpg",
     bio: "Original lead guitarist who was fired before the first album. He went on to found Megadeth, one of metal's biggest bands.",
     longBio:
       "Dave Mustaine was Metallica's original lead guitarist from 1981 until April 1983, when he was dismissed from the band primarily due to alcohol-fueled behavioral problems. Despite being fired before any studio recordings, Mustaine contributed guitar riffs to several songs that appear on Kill 'Em All, including The Four Horsemen and Jump in the Fire. His dismissal fueled a fierce rivalry and deep personal resentment that he channeled into founding Megadeth, which became one of the Big Four of thrash metal alongside Metallica. Mustaine has spoken extensively about his complicated feelings toward the band over the decades.",
