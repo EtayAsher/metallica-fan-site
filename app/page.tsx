@@ -29,9 +29,8 @@ export default function HomePage() {
                 Est. 1981 — Los Angeles, California
               </span>
             </div>
-            <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-black tracking-tight leading-none mb-8 text-white uppercase">
-              Metal<br />
-              <span className="text-yellow-400">lica</span>
+            <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-black tracking-tight leading-none mb-8 uppercase">
+              <span className="text-white">Metalli</span><span className="text-yellow-400">ca</span>
             </h1>
             <p className="text-neutral-500 text-base md:text-lg leading-relaxed max-w-lg mb-12 font-light">
               Four decades. Eleven studio albums. A legacy that defined heavy music.
