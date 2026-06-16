@@ -8,6 +8,7 @@ export interface Album {
   notableTracks: string[];
   producer: string;
   genre: string[];
+  image?: string;
 }
 
 export const albums: Album[] = [
@@ -15,6 +16,7 @@ export const albums: Album[] = [
     slug: "kill-em-all",
     title: "Kill 'Em All",
     year: 1983,
+    image: "https://upload.wikimedia.org/wikipedia/en/5/5c/Metallica_-_Kill_%27Em_All_cover.jpg",
     label: "Megaforce Records",
     description: "The debut album that launched a thrash metal movement. Raw, fast, and unrelenting.",
     longDescription:
@@ -27,6 +29,7 @@ export const albums: Album[] = [
     slug: "ride-the-lightning",
     title: "Ride the Lightning",
     year: 1984,
+    image: "https://i.scdn.co/image/ab67616d0000b2739ad3e9959f48d513886b8933",
     label: "Megaforce / Elektra Records",
     description: "A darker, more complex follow-up that expanded the band's musical ambitions.",
     longDescription:
@@ -39,6 +42,7 @@ export const albums: Album[] = [
     slug: "master-of-puppets",
     title: "Master of Puppets",
     year: 1986,
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzoCZXNzdwqtlXyZT5gBcL5H6o1v-dWW1704uPJTBua92ou_K1yeqluQ_F&s=10",
     label: "Elektra Records",
     description: "Widely regarded as the greatest thrash metal album ever recorded. A flawless masterpiece.",
     longDescription:
@@ -51,6 +55,7 @@ export const albums: Album[] = [
     slug: "and-justice-for-all",
     title: "...And Justice for All",
     year: 1988,
+    image: "https://upload.wikimedia.org/wikipedia/he/1/12/Metallica-AndJusticeForAll.jpg",
     label: "Elektra Records",
     description: "A progressive, politically charged epic and the debut of bassist Jason Newsted.",
     longDescription:
@@ -63,6 +68,7 @@ export const albums: Album[] = [
     slug: "metallica-black-album",
     title: "Metallica (The Black Album)",
     year: 1991,
+    image: "https://m.media-amazon.com/images/I/81J-7n9wWrL._UF1000,1000_QL80_.jpg",
     label: "Elektra Records",
     description: "The album that broke Metallica into mainstream superstardom. A landmark in rock history.",
     longDescription:
@@ -87,6 +93,7 @@ export const albums: Album[] = [
     slug: "reload",
     title: "Reload",
     year: 1997,
+    image: "https://upload.wikimedia.org/wikipedia/en/thumb/9/9b/Metallica_-_Reload_cover.jpg/250px-Metallica_-_Reload_cover.jpg",
     label: "Elektra Records",
     description: "The second half of the Load sessions, released a year later with fan favorites.",
     longDescription:
@@ -99,6 +106,7 @@ export const albums: Album[] = [
     slug: "st-anger",
     title: "St. Anger",
     year: 2003,
+    image: "https://media.pitchfork.com/photos/5929c44a13d197565213bf0c/master/pass/725dc285.jpg",
     label: "Elektra Records",
     description: "A raw, stripped-down record born from internal turmoil. Famous for its snare sound.",
     longDescription:
@@ -111,6 +119,7 @@ export const albums: Album[] = [
     slug: "death-magnetic",
     title: "Death Magnetic",
     year: 2008,
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7T8ohSi6pbjtPo_Tt0L_ZewXqqJHQEYtnsg67LRaDlv9sCscXXzY0RQxJ&s=10",
     label: "Warner Bros. Records",
     description: "A triumphant return to form featuring guitar solos and thrash-influenced energy.",
     longDescription:
@@ -123,6 +132,7 @@ export const albums: Album[] = [
     slug: "hardwired-to-self-destruct",
     title: "Hardwired... to Self-Destruct",
     year: 2016,
+    image: "https://cdn.media.amplience.net/i/metallica/hardwired-to-self-destruct_cover?fmt=auto&maxW=1050",
     label: "Blackened Recordings",
     description: "A double album that delivered Metallica's heaviest, most confident work in decades.",
     longDescription:
@@ -135,6 +145,7 @@ export const albums: Album[] = [
     slug: "72-seasons",
     title: "72 Seasons",
     year: 2023,
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5WHao7LcjX8aH2dEiM8O3yb1_aPPQGaDor5jYxXapavqp4H_IElfo27xR&s=10",
     label: "Blackened Recordings",
     description: "The most recent chapter, exploring themes of childhood and identity with thundering riffs.",
     longDescription:

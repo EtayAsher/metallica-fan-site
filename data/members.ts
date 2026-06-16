@@ -61,7 +61,7 @@ export const members: Member[] = [
     status: "current",
     born: "November 18, 1962",
     birthplace: "San Francisco, California, USA",
-    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJEm8AJm4P8FjYGMo5xelqDkWR_jUOZQLgUw&s",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBQm2intw-sF7CYJDOg8iipAl5sh2uagl7Pg&s",
     bio: "Lead guitarist since 1983, known for melodic, wah-infused solos and signature riffs across Metallica's greatest albums.",
     longBio:
       "Kirk Hammett replaced Dave Mustaine in April 1983 just before the recording of Kill 'Em All. Already a skilled guitarist as a member of Exodus, Hammett sought further instruction and studied under legendary guitar teacher Joe Satriani. His style blends aggressive thrash picking with melodic, blues-influenced lead work, and his heavy use of wah-wah pedal has become one of metal's most recognizable sounds. Hammett has crafted some of the most celebrated guitar solos in rock history, from the haunting One to the ferocious Battery. He is also a lifelong collector of horror memorabilia and vintage guitars.",
@@ -141,7 +141,7 @@ export const members: Member[] = [
     status: "former",
     born: "September 13, 1961",
     birthplace: "La Mesa, California, USA",
-    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBQm2intw-sF7CYJDOg8iipAl5sh2uagl7Pg&s",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJEm8AJm4P8FjYGMo5xelqDkWR_jUOZQLgUw&s",
     bio: "Original lead guitarist who was fired before the first album. He went on to found Megadeth, one of metal's biggest bands.",
     longBio:
       "Dave Mustaine was Metallica's original lead guitarist from 1981 until April 1983, when he was dismissed from the band primarily due to alcohol-fueled behavioral problems. Despite being fired before any studio recordings, Mustaine contributed guitar riffs to several songs that appear on Kill 'Em All, including The Four Horsemen and Jump in the Fire. His dismissal fueled a fierce rivalry and deep personal resentment that he channeled into founding Megadeth, which became one of the Big Four of thrash metal alongside Metallica. Mustaine has spoken extensively about his complicated feelings toward the band over the decades.",

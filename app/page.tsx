@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { albums } from "@/data/albums";
+
 import { members } from "@/data/members";
 import { news } from "@/data/news";
 
@@ -98,12 +99,21 @@ export default function HomePage() {
               className="group block"
             >
               <div className="bg-neutral-950 border border-neutral-900 group-hover:border-yellow-500/40 transition-all duration-300 overflow-hidden">
-                <div className="bg-neutral-900 h-44 flex items-center justify-center relative overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-br from-yellow-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  <div className="text-center px-4">
-                    <div className="text-yellow-500/40 text-[10px] tracking-widest uppercase mb-2">{album.year}</div>
-                    <div className="text-neutral-600 text-xs font-bold uppercase tracking-wider leading-tight">{album.title}</div>
-                  </div>
+                <div className="relative h-44 overflow-hidden bg-neutral-900">
+                  {album.image ? (
+                    <Image
+                      src={album.image}
+                      alt={album.title}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                      sizes="(max-width: 640px) 50vw, 25vw"
+                    />
+                  ) : (
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="text-neutral-600 text-xs font-bold uppercase tracking-wider">{album.title}</div>
+                    </div>
+                  )}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                 </div>
                 <div className="p-4">
                   <div className="text-yellow-500 text-[10px] font-bold tracking-[0.3em] mb-1">{album.year}</div>

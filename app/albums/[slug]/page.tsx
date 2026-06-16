@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { albums } from "@/data/albums";
 import { songs } from "@/data/songs";
@@ -39,16 +40,25 @@ export default async function AlbumDetailPage({ params }: Props) {
       </Link>
 
       <div className="grid md:grid-cols-5 gap-8 mb-14">
-        {/* Album art placeholder */}
+        {/* Album cover */}
         <div className="md:col-span-2">
-          <div className="bg-neutral-950 border border-neutral-900 aspect-square flex flex-col items-center justify-center relative overflow-hidden">
-            <div className="text-neutral-800 font-black text-7xl tabular-nums select-none absolute top-4 right-4">
-              {String(albumIndex + 1).padStart(2, "0")}
-            </div>
-            <div className="text-center px-8 relative">
-              <div className="text-yellow-500/40 text-[10px] tracking-[0.4em] uppercase mb-4">{album.year}</div>
-              <div className="text-neutral-600 text-lg font-black uppercase tracking-wider leading-tight">{album.title}</div>
-            </div>
+          <div className="relative aspect-square overflow-hidden bg-neutral-900 border border-neutral-900">
+            {album.image ? (
+              <Image
+                src={album.image}
+                alt={album.title}
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 40vw"
+                priority
+              />
+            ) : (
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="text-neutral-700 font-black text-6xl tabular-nums">
+                  {String(albumIndex + 1).padStart(2, "0")}
+                </div>
+              </div>
+            )}
           </div>
         </div>
 
@@ -109,17 +119,29 @@ export default async function AlbumDetailPage({ params }: Props) {
       {/* Prev / Next */}
       <div className="grid grid-cols-2 gap-3">
         {prevAlbum ? (
-          <Link href={`/albums/${prevAlbum.slug}`} className="bg-neutral-950 border border-neutral-900 hover:border-yellow-500/40 p-5 transition-all group">
-            <div className="text-neutral-700 text-[10px] uppercase tracking-[0.3em] mb-2">Previous</div>
-            <div className="text-white text-sm font-black uppercase tracking-wide group-hover:text-yellow-400 transition-colors">{prevAlbum.title}</div>
-            <div className="text-neutral-700 text-xs mt-0.5">{prevAlbum.year}</div>
+          <Link href={`/albums/${prevAlbum.slug}`} className="bg-neutral-950 border border-neutral-900 hover:border-yellow-500/40 p-5 transition-all group flex items-center gap-4">
+            {prevAlbum.image && (
+              <div className="relative w-12 h-12 shrink-0 overflow-hidden">
+                <Image src={prevAlbum.image} alt={prevAlbum.title} fill className="object-cover" sizes="48px" />
+              </div>
+            )}
+            <div>
+              <div className="text-neutral-700 text-[10px] uppercase tracking-[0.3em] mb-1">Previous</div>
+              <div className="text-white text-sm font-black uppercase tracking-wide group-hover:text-yellow-400 transition-colors">{prevAlbum.title}</div>
+            </div>
           </Link>
         ) : <div />}
         {nextAlbum ? (
-          <Link href={`/albums/${nextAlbum.slug}`} className="bg-neutral-950 border border-neutral-900 hover:border-yellow-500/40 p-5 transition-all text-right group">
-            <div className="text-neutral-700 text-[10px] uppercase tracking-[0.3em] mb-2">Next</div>
-            <div className="text-white text-sm font-black uppercase tracking-wide group-hover:text-yellow-400 transition-colors">{nextAlbum.title}</div>
-            <div className="text-neutral-700 text-xs mt-0.5">{nextAlbum.year}</div>
+          <Link href={`/albums/${nextAlbum.slug}`} className="bg-neutral-950 border border-neutral-900 hover:border-yellow-500/40 p-5 transition-all text-right group flex items-center justify-end gap-4">
+            <div>
+              <div className="text-neutral-700 text-[10px] uppercase tracking-[0.3em] mb-1">Next</div>
+              <div className="text-white text-sm font-black uppercase tracking-wide group-hover:text-yellow-400 transition-colors">{nextAlbum.title}</div>
+            </div>
+            {nextAlbum.image && (
+              <div className="relative w-12 h-12 shrink-0 overflow-hidden">
+                <Image src={nextAlbum.image} alt={nextAlbum.title} fill className="object-cover" sizes="48px" />
+              </div>
+            )}
           </Link>
         ) : <div />}
       </div>
