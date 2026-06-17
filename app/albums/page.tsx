@@ -10,29 +10,32 @@ export const metadata: Metadata = {
 
 export default function AlbumsPage() {
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 py-16">
-      <div className="border-b border-neutral-900 pb-10 mb-14">
-        <div className="flex items-center gap-3 mb-4">
-          <div className="h-px w-8 bg-yellow-500" />
-          <span className="text-yellow-500 text-[10px] font-bold tracking-[0.4em] uppercase">Discography</span>
+    <>
+      <section className="bg-yellow-400 border-b-4 border-black px-4 sm:px-6 py-14">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex items-center gap-3 mb-3">
+            <div className="h-px w-8 bg-black" />
+            <span className="text-black text-[10px] font-black tracking-[0.4em] uppercase">Discography</span>
+          </div>
+          <h1 className="text-5xl md:text-6xl font-black text-black uppercase tracking-tight">Albums</h1>
+          <p className="text-black/60 mt-3 text-sm max-w-lg leading-relaxed font-medium">
+            Eleven studio albums spanning over four decades of relentless creative output.
+          </p>
         </div>
-        <h1 className="text-4xl md:text-5xl font-black text-white uppercase tracking-tight">Albums</h1>
-        <p className="text-neutral-600 mt-3 text-sm max-w-lg leading-relaxed">
-          Eleven studio albums spanning over four decades of relentless creative output.
-        </p>
-      </div>
+      </section>
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 py-16">
 
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
         {albums.map((album, index) => (
           <Link key={album.slug} href={`/albums/${album.slug}`} className="group block">
-            <div className="bg-neutral-950 border border-neutral-900 group-hover:border-yellow-500/40 transition-all duration-300 overflow-hidden">
-              <div className="relative aspect-square overflow-hidden bg-neutral-900">
+            <div className="bg-[#1c1c1c] border border-neutral-700 group-hover:border-yellow-500/60 transition-all duration-300 overflow-hidden">
+              <div className="relative aspect-square overflow-hidden bg-neutral-800">
                 {album.image ? (
                   <Image
                     src={album.image}
                     alt={album.title}
                     fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="object-contain group-hover:scale-105 transition-transform duration-500"
                     sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
                   />
                 ) : (
@@ -53,5 +56,6 @@ export default function AlbumsPage() {
         ))}
       </div>
     </div>
+    </>
   );
 }

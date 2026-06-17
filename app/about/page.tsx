@@ -98,61 +98,46 @@ const milestones = [
   },
 ];
 
-const eraColors: Record<string, string> = {
-  Origins: "border-neutral-600 bg-neutral-800",
-  "Thrash Era": "border-red-800 bg-red-950/30",
-  Transition: "border-neutral-600 bg-neutral-800",
-  "Mainstream Breakthrough": "border-yellow-800 bg-yellow-950/20",
-  Controversy: "border-orange-800 bg-orange-950/20",
-  Turbulence: "border-neutral-600 bg-neutral-800",
-  Renewal: "border-green-800 bg-green-950/20",
-  Legacy: "border-blue-800 bg-blue-950/20",
-  Present: "border-red-700 bg-red-950/30",
-};
-
 export default function AboutPage() {
   return (
-    <div className="max-w-4xl mx-auto px-4 sm:px-6 py-12">
-      <div className="border-b border-neutral-800 pb-8 mb-12">
-        <span className="inline-block text-red-600 text-xs font-semibold tracking-[0.25em] uppercase mb-3">
-          History
-        </span>
-        <h1 className="text-3xl md:text-4xl font-black text-white">Band Timeline</h1>
-        <p className="text-neutral-400 mt-2 text-sm max-w-lg">
-          From a Los Angeles rehearsal room in 1981 to stadiums across the globe — the major milestones of Metallica.
-        </p>
-      </div>
+    <>
+      <section className="bg-yellow-400 border-b-4 border-black px-4 sm:px-6 py-14">
+        <div className="max-w-4xl mx-auto">
+          <div className="flex items-center gap-3 mb-3">
+            <div className="h-px w-8 bg-black" />
+            <span className="text-black text-[10px] font-black tracking-[0.4em] uppercase">History</span>
+          </div>
+          <h1 className="text-5xl md:text-6xl font-black text-black uppercase tracking-tight">Band Timeline</h1>
+          <p className="text-black/60 mt-3 text-sm max-w-lg leading-relaxed font-medium">
+            From a Los Angeles rehearsal room in 1981 to stadiums across the globe — the major milestones of Metallica.
+          </p>
+        </div>
+      </section>
 
-      {/* Timeline */}
-      <div className="relative">
-        {/* Vertical line */}
-        <div className="absolute left-[3.25rem] top-0 bottom-0 w-px bg-neutral-800 hidden sm:block" />
-
-        <div className="space-y-8">
-          {milestones.map((milestone, i) => (
-            <div key={i} className="flex gap-6 sm:gap-8 relative">
-              {/* Year + dot */}
-              <div className="flex flex-col items-end sm:items-center w-16 sm:w-24 shrink-0 pt-1">
-                <div className="font-black text-neutral-400 text-sm sm:text-base tabular-nums">{milestone.year}</div>
-                <div className="hidden sm:block w-2 h-2 rounded-full bg-red-700 mt-2 relative z-10 shrink-0" />
-              </div>
-
-              {/* Content */}
-              <div
-                className={`flex-1 border p-5 sm:p-6 mb-2 ${eraColors[milestone.era] ?? "border-neutral-700 bg-neutral-900"}`}
-              >
-                <div className="flex items-center gap-3 mb-3">
-                  <h2 className="font-bold text-white text-base leading-snug">{milestone.title}</h2>
-                  <span className="text-neutral-600 text-xs border border-neutral-700 px-2 py-0.5 shrink-0">
-                    {milestone.era}
-                  </span>
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 py-16">
+        <div className="relative">
+          <div className="absolute left-[3.25rem] top-0 bottom-0 w-px bg-yellow-500/30 hidden sm:block" />
+          <div className="space-y-6">
+            {milestones.map((milestone, i) => (
+              <div key={i} className="flex gap-6 sm:gap-8 relative">
+                <div className="flex flex-col items-end sm:items-center w-16 sm:w-24 shrink-0 pt-1">
+                  <div className="font-black text-yellow-400 text-sm sm:text-base tabular-nums">{milestone.year}</div>
+                  <div className="hidden sm:block w-3 h-3 rounded-full bg-yellow-500 mt-2 relative z-10 shrink-0 border-2 border-[#111]" />
                 </div>
-                <p className="text-neutral-400 text-sm leading-relaxed">{milestone.body}</p>
+                <div className="flex-1 bg-[#1c1c1c] border border-neutral-700 hover:border-yellow-500/60 transition-colors p-5 sm:p-6 mb-2">
+                  <div className="flex items-center gap-3 mb-3 flex-wrap">
+                    <h2 className="font-black text-white text-base leading-snug uppercase tracking-wide">{milestone.title}</h2>
+                    <span className="text-yellow-500 text-[10px] border border-yellow-500/40 bg-yellow-500/10 px-2 py-0.5 shrink-0 tracking-wider uppercase font-bold">
+                      {milestone.era}
+                    </span>
+                  </div>
+                  <p className="text-neutral-300 text-sm leading-relaxed">{milestone.body}</p>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }

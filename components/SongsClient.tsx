@@ -35,12 +35,12 @@ export default function SongsClient({ songs }: Props) {
           value={search}
           onChange={(e) => setSearch(e.target.value)}
           placeholder="Search songs or albums..."
-          className="flex-1 bg-neutral-950 border border-neutral-800 focus:border-yellow-500/50 text-neutral-200 placeholder-neutral-700 text-sm px-4 py-3 outline-none transition-colors"
+          className="flex-1 bg-[#1c1c1c] border border-neutral-600 focus:border-yellow-500/50 text-neutral-200 placeholder-neutral-700 text-sm px-4 py-3 outline-none transition-colors"
         />
         <select
           value={albumFilter}
           onChange={(e) => setAlbumFilter(e.target.value)}
-          className="bg-neutral-950 border border-neutral-800 text-neutral-400 text-sm px-4 py-3 outline-none focus:border-yellow-500/50 transition-colors min-w-[180px]"
+          className="bg-[#1c1c1c] border border-neutral-600 text-neutral-400 text-sm px-4 py-3 outline-none focus:border-yellow-500/50 transition-colors min-w-[180px]"
         >
           {albums.map((a) => (
             <option key={a} value={a}>{a === "All" ? "All Albums" : a}</option>
@@ -67,7 +67,7 @@ export default function SongsClient({ songs }: Props) {
           {filtered.map((song, index) => (
             <article
               key={song.slug}
-              className="bg-neutral-950 border border-neutral-900 hover:border-yellow-500/30 p-5 transition-all duration-150 group"
+              className="bg-[#1c1c1c] border border-neutral-700 hover:border-yellow-500 p-5 transition-all duration-150 group"
             >
               <div className="flex items-start gap-5">
                 <span className="text-neutral-800 font-black font-mono text-xs mt-0.5 w-6 shrink-0 tabular-nums">
@@ -90,7 +90,7 @@ export default function SongsClient({ songs }: Props) {
                     <span className="text-neutral-800 text-[10px]">·</span>
                     <span className="text-neutral-700 text-[10px] tracking-wider">{song.year}</span>
                   </div>
-                  <p className="text-neutral-600 text-sm leading-relaxed">{song.description}</p>
+                  <p className="text-neutral-400 text-sm leading-relaxed">{song.description}</p>
                 </div>
               </div>
             </article>

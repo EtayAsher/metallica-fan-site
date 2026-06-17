@@ -68,7 +68,7 @@ export const albums: Album[] = [
     slug: "metallica-black-album",
     title: "Metallica (The Black Album)",
     year: 1991,
-    image: "https://m.media-amazon.com/images/I/81J-7n9wWrL._UF1000,1000_QL80_.jpg",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpTiXp_00Dem1PkR1P5yJHB9A4-rC6fMtn0J7c638rgF9cE-tatDFDV8A&s=10",
     label: "Elektra Records",
     description: "The album that broke Metallica into mainstream superstardom. A landmark in rock history.",
     longDescription:
@@ -81,6 +81,7 @@ export const albums: Album[] = [
     slug: "load",
     title: "Load",
     year: 1996,
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjDIGsDBrleXzSGKXXgWaTsGknx8FTIwLamoUlRiv43A&s",
     label: "Elektra Records",
     description: "A controversial left turn into blues-influenced hard rock that divided longtime fans.",
     longDescription:
