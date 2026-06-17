@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-import Image from "next/image";
 import { albums } from "@/data/albums";
+import AlbumsClient from "@/components/AlbumsClient";
 
 export const metadata: Metadata = {
   title: "Albums",
@@ -23,39 +22,9 @@ export default function AlbumsPage() {
           </p>
         </div>
       </section>
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 py-16">
-
-      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
-        {albums.map((album, index) => (
-          <Link key={album.slug} href={`/albums/${album.slug}`} className="group block">
-            <div className="bg-[#1c1c1c] border border-neutral-700 group-hover:border-yellow-500/60 transition-all duration-300 overflow-hidden">
-              <div className="relative aspect-square overflow-hidden bg-neutral-800">
-                {album.image ? (
-                  <Image
-                    src={album.image}
-                    alt={album.title}
-                    fill
-                    className="object-contain group-hover:scale-105 transition-transform duration-500"
-                    sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
-                  />
-                ) : (
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="text-neutral-700 font-black text-4xl tabular-nums">{String(index + 1).padStart(2, "0")}</div>
-                  </div>
-                )}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              </div>
-              <div className="p-4">
-                <div className="text-yellow-500 text-[10px] font-bold tracking-[0.3em] mb-1">{album.year}</div>
-                <h2 className="font-black text-white text-sm uppercase tracking-wide leading-tight group-hover:text-yellow-400 transition-colors">
-                  {album.title}
-                </h2>
-              </div>
-            </div>
-          </Link>
-        ))}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-16">
+        <AlbumsClient albums={albums} />
       </div>
-    </div>
     </>
   );
 }

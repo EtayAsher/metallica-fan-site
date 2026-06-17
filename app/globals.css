@@ -36,3 +36,41 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: #ca8a04;
 }
+
+/* Light theme overrides */
+html.theme-light {
+  --background: #f5f5f0;
+  --foreground: #111111;
+}
+
+html.theme-light body {
+  background: #f5f5f0;
+  color: #111111;
+}
+
+html.theme-light .bg-\[#111111\],
+html.theme-light .bg-\[#1a1a1a\],
+html.theme-light .bg-\[#1c1c1c\],
+html.theme-light .bg-\[#222\] {
+  background-color: #e8e8e0 !important;
+}
+
+html.theme-light .bg-black {
+  background-color: #222222 !important;
+}
+
+html.theme-light .bg-neutral-950 {
+  background-color: #e0e0d8 !important;
+}
+
+html.theme-light .border-neutral-700,
+html.theme-light .border-neutral-800,
+html.theme-light .border-neutral-900 {
+  border-color: #cccccc !important;
+}
+
+html.theme-light .text-neutral-300 { color: #333333 !important; }
+html.theme-light .text-neutral-400 { color: #444444 !important; }
+html.theme-light .text-neutral-500 { color: #666666 !important; }
+html.theme-light .text-neutral-600 { color: #888888 !important; }
+html.theme-light .text-white { color: #111111 !important; }

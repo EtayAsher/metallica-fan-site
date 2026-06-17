@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import GlobalSearch from "./GlobalSearch";
+import ThemeToggle from "./ThemeToggle";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -15,6 +16,7 @@ const navLinks = [
   { href: "/trivia", label: "Trivia" },
   { href: "/gear", label: "Gear" },
   { href: "/quotes", label: "Quotes" },
+  { href: "/rank", label: "Rank" },
   { href: "/about", label: "Timeline" },
 ];
 
@@ -56,6 +58,7 @@ export default function Header() {
 
           {/* Search + hamburger */}
           <div className="flex items-center gap-2">
+            <ThemeToggle />
             <GlobalSearch />
             <button
               onClick={() => setMenuOpen(!menuOpen)}
