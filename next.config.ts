@@ -1,7 +1,10 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  output: "export",
+  basePath: "/metallica-fan-site",
   images: {
+    unoptimized: true,
     remotePatterns: [
       { protocol: "https", hostname: "upload.wikimedia.org" },
       { protocol: "https", hostname: "guitar.com" },
